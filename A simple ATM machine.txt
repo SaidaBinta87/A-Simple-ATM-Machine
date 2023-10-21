@@ -1,0 +1,92 @@
+//( writing a program for a simple ATM machine using OOP in C++*/
+
+
+#include <iostream>
+using namespace std;
+
+class account{
+private:
+    double balance=1000;
+    double withdrawAmount;
+    double transferAmount;
+public:
+
+    int getwithdraw(){cout<<"Withdraw amount:"<<endl;
+
+       cin>>withdrawAmount;
+if(withdrawAmount<= balance)
+      {
+    balance -= withdrawAmount;
+    cout<<"Current balance:"<<balance<<"TK"<<endl;}
+else
+   {
+
+    cout<<"Not enough balance"<<endl;
+    }
+    return 0;}
+
+    int gettransfer(){cout<<"Transfer amount:"<<endl;
+
+    cin>>transferAmount;
+    if(transferAmount<=balance)
+    {
+        balance -= transferAmount;
+        cout<<"Current balance:"<<balance<<"TK"<<endl;
+    }
+    else
+    {
+        cout<<"Not enough balance"<<endl;
+        return 0;}
+
+    }
+    int  getministatement(){
+       cout<<"*******MINI STATEMENT*******"<<endl;
+       cout<<"1.withdraw amount is:200 tk,Date:20-9-2020"<<endl;
+       cout<<"2.transfer amount is:500 tk,Date:23-9-2020"<<endl;
+       cout<<"3.your last withdraw amount is: "<<withdrawAmount<<"TK"<<endl;
+       cout<<"4.your last transfer amount is: "<<transferAmount<<"TK"<<endl;
+
+       cout<<"Current Balance is:"<<balance<<"TK"<<endl;
+       return 0;}
+       int getbalance(){
+       cout<<"your balance is:"<<balance;
+       return 0;}
+    };
+    void showmenu()
+{
+cout<<"**********MENU**********"<<endl;
+cout<<"1.Withdraw Money"<<endl;
+cout<<"2.Transfer Money"<<endl;
+cout<<"3.Mini statement"<<endl;
+cout<<"4.EXIT"<<endl;
+cout<<"************************"<<endl;
+}
+
+int main(){
+account atm1,atm2,atm3;
+cout<<"WELCOME TO A SIMPLE ATM MACHINE "<<endl;
+//Mini statement,Withdraw,Transfer,Show menu
+int option;
+
+do{
+showmenu();
+cout<<"OPTION:"<<endl;
+cin>>option;
+
+switch (option){
+    case 1:atm1.getwithdraw();
+    break;
+    case 2:atm1.gettransfer();
+    break;
+    case 3:atm1.getministatement();
+    break;}
+}
+    while(option<=3);
+cout<<"THANKS FOR USING OUR ATM MACHINE"<<endl;
+return 0;}
+
+
+
+
+
+
